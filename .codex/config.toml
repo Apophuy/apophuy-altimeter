@@ -1,0 +1,41 @@
+# Project-scoped Codex configuration. Loaded only after this repository is trusted.
+project_doc_max_bytes = 65536
+
+# Current library documentation for Kotlin, AndroidX, Compose, and Gradle.
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp@latest"]
+startup_timeout_sec = 30
+tool_timeout_sec = 60
+enabled = true
+required = false
+
+# Persistent semantic code graph for this repository. The wrapper keeps its
+# cache in .codebase-memory and uses a UI port distinct from other workspaces.
+[mcp_servers.codebase_memory]
+command = "/bin/bash"
+args = ["-lc", 'exec "$(git rev-parse --show-toplevel)/tools/mcp/codebase-memory.sh"']
+cwd = "."
+startup_timeout_sec = 30
+tool_timeout_sec = 180
+enabled = true
+required = false
+default_tools_approval_mode = "auto"
+disabled_tools = ["delete_project"]
+
+[mcp_servers.codebase_memory.tools.manage_adr]
+approval_mode = "prompt"
+
+# These globally configured servers belong to other workspaces or browser tasks
+# and only add startup cost/noise for this native Android repository.
+[mcp_servers.op_swagger]
+enabled = false
+
+[mcp_servers.playwright]
+enabled = false
+
+[mcp_servers.jira-local]
+enabled = false
+
+[mcp_servers.gitlab]
+enabled = false
