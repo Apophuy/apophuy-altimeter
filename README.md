@@ -4,6 +4,14 @@ English | [Русский](README.ru.md)
 
 A native, offline-first altimeter and compass for Android 8.0 and later. Google Play Services are not required.
 
+## Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/instrument.png" alt="Instrument screen with compass, altitude, and GNSS status" width="30%">
+  <img src="docs/screenshots/weather.png" alt="Weather screen with current conditions and forecast" width="30%">
+  <img src="docs/screenshots/settings-dark.png" alt="Settings screen in the dark theme" width="30%">
+</p>
+
 ## Features
 
 - a stable, filtered compass that clearly switches between magnetic and true north, reports sensor accuracy, and includes a calibration guide;
